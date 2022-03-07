@@ -27,7 +27,8 @@ export default class Parent extends React.Component {
     // Current number of panels
     let currentPanels = this.state.numberPanels;
     let currentColors = this.state.colors;
-    currentColors.push('#ffffff');
+    let randomColor = `#${Math.floor(Math.random() * 16777215).toString(16)}`;
+    currentColors.push(randomColor);
     // Add a panel (no limit lol)
     this.setState({ numberPanels: currentPanels++, colors: currentColors });
   }
