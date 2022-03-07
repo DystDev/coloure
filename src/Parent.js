@@ -1,47 +1,41 @@
 import React from 'react';
-import NameUpdater from './NameUpdater';
-import NameDisplayer from './NameDisplayer';
+
 export default class Parent extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      tempName: '',
-      accName: '',
-      primaryColor: '#c1ff9b',
-      secondaryColor: '#fface4'
+      numberPanels: 3,
+      colors: ['#ffffff', '#ffffff', '#ffffff']
     };
-    this.newName = this.newName.bind(this);
-    this.setName = this.setName.bind(this);
+    this.removePanel = this.removePanel.bind(this);
+    this.add = this.addPanel.bind(this);
   }
 
-  newName(name) {
-    this.setState({ tempName: name });
-  }
-
-  setName() {
-    let randomColorPrimary = Math.floor(Math.random() * 16777215).toString(16);
-    let randomColorSecondary = Math.floor(Math.random() * 16777215).toString(
-      16
-    );
+  removePanel() {
+    // Current number of panels
+    let currentPanels = this.state.numberPanels;
+    let currentColors = this.state.colors;
+    currentColors.pop();
+    // If there is one panel, then reject and keep numberPanels at 1
     this.setState({
-      accName: this.state.tempName,
-      primaryColor: `#${randomColorPrimary}`,
-      secondaryColor: `#${randomColorSecondary}`
+      numberPanels: currentPanels > 1 ? currentPanels-- : 1,
+      colors: currentColors
     });
+  }
+
+  addPanel() {
+    // Current number of panels
+    let currentPanels = this.state.numberPanels;
+    let currentColors = this.state.colors;
+    currentColors.push('#ffffff');
+    // Add a panel (no limit lol)
+    this.setState({ numberPanels: currentPanels++, colors: currentColors });
   }
 
   render() {
     return (
       <>
-        <NameUpdater
-          onChange={this.newName}
-          onSet={this.setName}
-          color={this.state.primaryColor}
-        />
-        <NameDisplayer
-          name={this.state.accName}
-          color={this.state.secondaryColor}
-        />
+        <h1>Mogus</h1>
       </>
     );
   }
