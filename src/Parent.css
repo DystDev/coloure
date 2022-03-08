@@ -1,0 +1,17 @@
+.nav {
+  position: absolute;
+  display: flex;
+  top: 0;
+  left: 0;
+  justify-content: space-between;
+  width: 100%;
+}
+
+@media only screen and (max-width: 1000px) {
+  .logo {
+    display: none;
+  }
+  .nav {
+    flex-direction: column;
+  }
+}

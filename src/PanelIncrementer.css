@@ -1,8 +1,5 @@
 .minusButton {
   margin: 1.5em;
-  position: absolute;
-  top: 0;
-  left: 0;
   background-color: white;
   color: black;
   width: 50px;
@@ -13,9 +10,6 @@
 
 .addButton {
   margin: 1.5em;
-  position: absolute;
-  top: 0;
-  left: 5%;
   background-color: white;
   color: black;
   width: 50px;

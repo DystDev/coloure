@@ -2,8 +2,8 @@ import React from 'react';
 import PanelHandler from './PanelHandler';
 import PanelUpdater from './PanelUpdater';
 import PanelIncrementer from './PanelIncrementer';
-import Logo from './Logo'
-import './Parent.css'
+import Logo from './Logo';
+import './Parent.css';
 
 export default class Parent extends React.Component {
   constructor(props) {
@@ -64,10 +64,15 @@ export default class Parent extends React.Component {
     return (
       <>
         <PanelHandler num={this.state.numberPanels} col={this.state.colors} />
-        <div className='nav'>
+        <div className="nav">
+          <div>
+            <PanelIncrementer
+              onAdd={this.addPanel}
+              onRemove={this.removePanel}
+            />
+          </div>
+          <Logo className="logo" />
           <PanelUpdater onClick={this.updatePanels} />
-          <PanelIncrementer onAdd={this.addPanel} onRemove={this.removePanel} />
-          <Logo />
         </div>
       </>
     );
