@@ -1,11 +1,11 @@
 import React from 'react';
-
+import PanelHandler from './PanelHandler';
 export default class Parent extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       numberPanels: 3,
-      colors: ['#ffffff', '#ffffff', '#ffffff']
+      colors: ['#149274', '#f36234', '#000000']
     };
     this.removePanel = this.removePanel.bind(this);
     this.add = this.addPanel.bind(this);
@@ -36,7 +36,7 @@ export default class Parent extends React.Component {
   render() {
     return (
       <>
-        <h1>Mogus</h1>
+        <PanelHandler num={this.state.numberPanels} col={this.state.colors} />
       </>
     );
   }
