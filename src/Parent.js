@@ -3,6 +3,8 @@ import PanelHandler from './PanelHandler';
 import PanelUpdater from './PanelUpdater';
 import PanelIncrementer from './PanelIncrementer';
 import Logo from './Logo'
+import './Parent.css'
+
 export default class Parent extends React.Component {
   constructor(props) {
     super(props);
@@ -62,9 +64,11 @@ export default class Parent extends React.Component {
     return (
       <>
         <PanelHandler num={this.state.numberPanels} col={this.state.colors} />
-        <PanelUpdater onClick={this.updatePanels} />
-        <PanelIncrementer onAdd={this.addPanel} onRemove={this.removePanel} />
-        <Logo />
+        <div className='nav'>
+          <PanelUpdater onClick={this.updatePanels} />
+          <PanelIncrementer onAdd={this.addPanel} onRemove={this.removePanel} />
+          <Logo />
+        </div>
       </>
     );
   }

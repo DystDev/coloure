@@ -2,3 +2,9 @@
   display: flex;
   align-items: stretch;
 }
+
+@media (pointer: none), (pointer: coarse) {
+  .container {
+    flex-direction: column;
+  }
+}
