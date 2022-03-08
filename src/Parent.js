@@ -1,14 +1,16 @@
 import React from 'react';
 import PanelHandler from './PanelHandler';
+import PanelUpdater from './PanelUpdater';
 export default class Parent extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      numberPanels: 4,
-      colors: ['#149274', '#f36234', '#1f84a6', '#06f85b']
+      numberPanels: 5,
+      colors: ['#149274', '#f36234', '#1f84a6', '#06f85b', '#555555']
     };
     this.removePanel = this.removePanel.bind(this);
-    this.add = this.addPanel.bind(this);
+    this.addPanel = this.addPanel.bind(this);
+    this.updatePanels = this.updatePanels.bind(this);
   }
 
   removePanel() {
@@ -27,16 +29,32 @@ export default class Parent extends React.Component {
     // Current number of panels
     let currentPanels = this.state.numberPanels;
     let currentColors = this.state.colors;
-    let randomColor = `#${Math.floor(Math.random() * 16777215).toString(16)}`;
+    let randomColor = this.getRandomHex();
     currentColors.push(randomColor);
     // Add a panel (no limit lol)
     this.setState({ numberPanels: currentPanels++, colors: currentColors });
+  }
+
+  updatePanels() {
+    let numToUpdate = this.state.numberPanels;
+    let arr = [];
+    for (let i = 0; i < numToUpdate; i++) {
+      arr.push(this.getRandomHex());
+    }
+    this.setState({ colors: arr });
+  }
+
+  getRandomHex() {
+    return (
+      '#' + ((Math.random() * 0xffffff) << 0).toString(16).padStart(6, '0')
+    );
   }
 
   render() {
     return (
       <>
         <PanelHandler num={this.state.numberPanels} col={this.state.colors} />
+        <PanelUpdater onClick={this.updatePanels} />
       </>
     );
   }
