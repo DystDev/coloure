@@ -1,6 +1,6 @@
 import React from 'react';
 import './Panel.css';
-
+import { ntc } from './ntc/ntc.js';
 export default class Panel extends React.Component {
   determineTextColor(bgColor, lightColor, darkColor) {
     var color = bgColor.charAt(0) === '#' ? bgColor.substring(1, 7) : bgColor;
@@ -11,6 +11,7 @@ export default class Panel extends React.Component {
   }
 
   render() {
+    let n_match = ntc.name(this.props.color);
     let textColor = this.determineTextColor(
       this.props.color,
       '#ffffff',
@@ -18,6 +19,9 @@ export default class Panel extends React.Component {
     );
     return (
       <div className="panel" style={{ backgroundColor: this.props.color }}>
+        <p className="nameText" style={{ color: textColor }}>
+          {n_match[1]}
+        </p>
         <p className="panelText" style={{ color: textColor }}>
           {this.props.color}
         </p>

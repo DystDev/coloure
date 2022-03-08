@@ -19,10 +19,13 @@ export default class Parent extends React.Component {
     // Current number of panels
     let currentPanels = this.state.numberPanels;
     let currentColors = this.state.colors;
+    if (currentPanels === 1) {
+      return;
+    }
     currentColors.pop();
     // If there is one panel, then reject and keep numberPanels at 1
     this.setState({
-      numberPanels: currentPanels > 1 ? currentPanels-- : 1,
+      numberPanels: --currentPanels,
       colors: currentColors
     });
   }
@@ -31,10 +34,13 @@ export default class Parent extends React.Component {
     // Current number of panels
     let currentPanels = this.state.numberPanels;
     let currentColors = this.state.colors;
+    if (currentPanels === 12) {
+      return;
+    }
     let randomColor = this.getRandomHex();
     currentColors.push(randomColor);
     // Add a panel (no limit lol)
-    this.setState({ numberPanels: currentPanels++, colors: currentColors });
+    this.setState({ numberPanels: ++currentPanels, colors: currentColors });
   }
 
   updatePanels() {

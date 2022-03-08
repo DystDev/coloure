@@ -17,6 +17,15 @@ export default class PanelIncrementer extends React.Component {
   }
 
   render() {
-    return <button onClick={this.handleAdd}>+</button>;
+    return (
+      <>
+        <button onClick={this.handleRemove} className="minusButton">
+          -
+        </button>
+        <button onClick={this.handleAdd} className="addButton">
+          +
+        </button>
+      </>
+    );
   }
 }
