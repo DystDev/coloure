@@ -1,6 +1,8 @@
 import React from 'react';
 import PanelHandler from './PanelHandler';
 import PanelUpdater from './PanelUpdater';
+import PanelIncrementer from './PanelIncrementer';
+
 export default class Parent extends React.Component {
   constructor(props) {
     super(props);
@@ -55,6 +57,7 @@ export default class Parent extends React.Component {
       <>
         <PanelHandler num={this.state.numberPanels} col={this.state.colors} />
         <PanelUpdater onClick={this.updatePanels} />
+        <PanelIncrementer onAdd={this.addPanel} onRemove={this.removePanel} />
       </>
     );
   }

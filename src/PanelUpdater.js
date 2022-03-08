@@ -1,4 +1,5 @@
 import React from 'react';
+import './PanelUpdater.css';
 
 export default class PanelUpdater extends React.Component {
   constructor(props) {
@@ -13,7 +14,7 @@ export default class PanelUpdater extends React.Component {
   render() {
     return (
       <button onClick={this.handleClick} className="updateButton">
-        Restart
+        +
       </button>
     );
   }

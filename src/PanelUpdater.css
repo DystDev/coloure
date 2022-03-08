@@ -1,0 +1,20 @@
+.updateButton {
+  margin: 1.5em;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: white;
+  color: black;
+  width: 50px;
+  height: 50px;
+  border: 1px beige solid;
+  font-size: 30px;
+}
+
+.updateButton:hover {
+  background-color: aliceblue;
+}
+
+.updateButton:active {
+  background-color: aqua;
+}
