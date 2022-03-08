@@ -2,10 +2,6 @@ import React from 'react';
 import './Panel.css';
 
 export default class Panel extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
   determineTextColor(bgColor, lightColor, darkColor) {
     var color = bgColor.charAt(0) === '#' ? bgColor.substring(1, 7) : bgColor;
     var r = parseInt(color.substring(0, 2), 16); // hexToR
@@ -22,7 +18,9 @@ export default class Panel extends React.Component {
     );
     return (
       <div className="panel" style={{ backgroundColor: this.props.color }}>
-        <p className='panelText' style={{ color: textColor }}>{this.props.color}</p>
+        <p className="panelText" style={{ color: textColor }}>
+          {this.props.color}
+        </p>
       </div>
     );
   }

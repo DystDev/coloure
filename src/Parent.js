@@ -4,8 +4,8 @@ export default class Parent extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      numberPanels: 3,
-      colors: ['#149274', '#f36234', '#000000']
+      numberPanels: 4,
+      colors: ['#149274', '#f36234', '#1f84a6', '#06f85b']
     };
     this.removePanel = this.removePanel.bind(this);
     this.add = this.addPanel.bind(this);
