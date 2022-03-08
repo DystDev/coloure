@@ -1,5 +1,6 @@
 {
   "name": "coloure",
+  "homepage": "https://coloure.dyst.dev",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
