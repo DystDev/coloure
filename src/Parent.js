@@ -32,6 +32,7 @@ export default class Parent extends React.Component {
     this.addPanel = this.addPanel.bind(this);
     this.updatePanels = this.updatePanels.bind(this);
     this.openModal = this.openModal.bind(this);
+    this.closeModal = this.closeModal.bind(this);
   }
 
   removePanel() {
@@ -77,7 +78,13 @@ export default class Parent extends React.Component {
     );
   }
 
-  openModal() {}
+  openModal() {
+    this.setState({ modalIsOpen: true });
+  }
+
+  closeModal() {
+    this.setState({ modalIsOpen: false });
+  }
 
   render() {
     return (
@@ -96,6 +103,16 @@ export default class Parent extends React.Component {
         <div className="share">
           <PanelSharer onClick={this.openModal} />
         </div>
+        <Modal
+          isOpen={this.state.modalIsOpen}
+          onRequestClose={this.closeModal}
+          style={customStyles}
+          contentLabel="Share"
+        >
+          <h2>Data here</h2>
+          <button onClick={this.closeModal}>close</button>
+        </Modal>
+        )
       </>
     );
   }
