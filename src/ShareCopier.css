@@ -1,0 +1,19 @@
+.copyButton {
+  margin-right: 1em;
+  background-color: rgb(204, 204, 204);
+  color: black;
+  width: fit-content;
+  height: 50px;
+  border: 1px beige solid;
+  font-size: 30px;
+}
+
+
+.copyButton:hover {
+    background-color: aliceblue;
+  }
+  
+  .copyButton:active {
+    background-color: aqua;
+  }
+  

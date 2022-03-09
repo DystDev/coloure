@@ -32,3 +32,11 @@
   border: 1px beige solid;
   font-size: 30px;
 }
+
+.modalClose:hover {
+  background-color: aliceblue;
+}
+
+.modalClose:active {
+  background-color: aqua;
+}

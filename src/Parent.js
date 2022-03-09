@@ -111,7 +111,7 @@ export default class Parent extends React.Component {
           contentLabel="Share"
         >
           <ShareHandler colors={this.state.colors} />
-          <ShareCopier />
+          <ShareCopier colors={this.state.colors} />
           <button onClick={this.closeModal} class="modalClose">
             Close
           </button>
