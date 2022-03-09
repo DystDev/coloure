@@ -109,7 +109,7 @@ export default class Parent extends React.Component {
           style={customStyles}
           contentLabel="Share"
         >
-          <h2>Data here</h2>
+          <ShareHandler colors={this.state.colors} />
           <button onClick={this.closeModal}>close</button>
         </Modal>
         )
