@@ -6,6 +6,7 @@ import Logo from './Logo';
 import PanelSharer from './PanelSharer';
 import './Parent.css';
 import Modal from 'react-modal';
+import ShareHandler from './ShareHandler';
 
 const customStyles = {
   content: {
