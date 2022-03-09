@@ -3,6 +3,7 @@ import PanelHandler from './PanelHandler';
 import PanelUpdater from './PanelUpdater';
 import PanelIncrementer from './PanelIncrementer';
 import Logo from './Logo';
+import PanelSharer from './PanelSharer';
 import './Parent.css';
 
 export default class Parent extends React.Component {
@@ -15,6 +16,7 @@ export default class Parent extends React.Component {
     this.removePanel = this.removePanel.bind(this);
     this.addPanel = this.addPanel.bind(this);
     this.updatePanels = this.updatePanels.bind(this);
+    this.sharePanels = this.sharePanels.bind(this);
   }
 
   removePanel() {
@@ -60,6 +62,8 @@ export default class Parent extends React.Component {
     );
   }
 
+  sharePanels() {}
+
   render() {
     return (
       <>
@@ -73,6 +77,9 @@ export default class Parent extends React.Component {
           </div>
           <Logo className="logo" />
           <PanelUpdater onClick={this.updatePanels} />
+        </div>
+        <div className="share">
+          <PanelSharer onClick={this.sharePanels} />
         </div>
       </>
     );
