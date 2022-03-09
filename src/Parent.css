@@ -23,3 +23,12 @@
   justify-content: flex-start;
   width: 100%;
 }
+
+.modalClose {
+  background-color: rgb(204, 204, 204);
+  color: black;
+  width: fit-content;
+  height: 50px;
+  border: 1px beige solid;
+  font-size: 30px;
+}

@@ -7,7 +7,7 @@ import PanelSharer from './PanelSharer';
 import './Parent.css';
 import Modal from 'react-modal';
 import ShareHandler from './ShareHandler';
-
+import ShareCopier from './ShareCopier';
 const customStyles = {
   content: {
     top: '50%',
@@ -111,7 +111,10 @@ export default class Parent extends React.Component {
           contentLabel="Share"
         >
           <ShareHandler colors={this.state.colors} />
-          <button onClick={this.closeModal}>close</button>
+          <ShareCopier />
+          <button onClick={this.closeModal} class="modalClose">
+            Close
+          </button>
         </Modal>
         )
       </>
