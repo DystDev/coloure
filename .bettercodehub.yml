@@ -1,2 +1,2 @@
 exclude:
-- /src/ntc
+- ./src/ntc/ntc.js
