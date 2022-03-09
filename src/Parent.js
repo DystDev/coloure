@@ -5,18 +5,33 @@ import PanelIncrementer from './PanelIncrementer';
 import Logo from './Logo';
 import PanelSharer from './PanelSharer';
 import './Parent.css';
+import Modal from 'react-modal';
+
+const customStyles = {
+  content: {
+    top: '50%',
+    left: '50%',
+    right: 'auto',
+    bottom: 'auto',
+    marginRight: '-50%',
+    transform: 'translate(-50%, -50%)'
+  }
+};
+
+Modal.setAppElement(document.getElementById('root'));
 
 export default class Parent extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       numberPanels: 5,
-      colors: ['#149274', '#f36234', '#1f84a6', '#06f85b', '#555555']
+      colors: ['#149274', '#f36234', '#1f84a6', '#06f85b', '#555555'],
+      modalIsOpen: false
     };
     this.removePanel = this.removePanel.bind(this);
     this.addPanel = this.addPanel.bind(this);
     this.updatePanels = this.updatePanels.bind(this);
-    this.sharePanels = this.sharePanels.bind(this);
+    this.openModal = this.openModal.bind(this);
   }
 
   removePanel() {
@@ -62,7 +77,7 @@ export default class Parent extends React.Component {
     );
   }
 
-  sharePanels() {}
+  openModal() {}
 
   render() {
     return (
@@ -79,7 +94,7 @@ export default class Parent extends React.Component {
           <PanelUpdater onClick={this.updatePanels} />
         </div>
         <div className="share">
-          <PanelSharer onClick={this.sharePanels} />
+          <PanelSharer onClick={this.openModal} />
         </div>
       </>
     );
